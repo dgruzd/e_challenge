@@ -26,7 +26,7 @@ describe Member do
   end
 
   it 'should not be valid with wrong url' do
-    %w{htt://ya.ru ftp://ya.ru}.each do |site|
+    %w{htt://ya.ru ftp://ya.ru http://wrong_site.com}.each do |site|
       @member.website = site
       @member.should_not be_valid
       @member.website.should be == site
@@ -39,6 +39,14 @@ describe Member do
     VCR.use_cassette('alphasights') do
       @alan.get_topics.count.should be == 9
     end
+  end
+
+  it 'should failed to get topics' do
+    @member.website = 'http://yandex.ru/'
+    VCR.use_cassette('error') do
+      @member.get_topics.count.should be == 0
+    end
+
   end
 
   it 'should create topics' do

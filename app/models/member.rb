@@ -27,6 +27,8 @@ class Member < ActiveRecord::Base
       res << {level: level, title: node.text.strip}
     end
     res
+  rescue OpenURI::HTTPError
+    res
   end
 
   private
