@@ -1,17 +1,16 @@
-%h1.member_name= @member.name
-%p= link_to @member.website, @member.website, target: '_blank'
+%h1.member_name.center= @member.name
+%span= link_to @member.website, @member.website, target: '_blank'
+- short_url = shortener_url(@member.short_url_key)
+%span.member-short_url= link_to short_url, short_url, target: '_blank'
 
 .topics
-  %h2= t('word.topics')
-  %ul
-    - @topics.each do |t|
-      %li= t.title
+  - if @topics.blank?
+    %h2= t('topic.blank')
+  - else
+    %h2= Topic.model_name.human(count: 3)
+    %ul
+      - @topics.each do |t|
+        %li= t.title
 
 .friends
-  %h2= t('word.friends')
-  - if @friends.blank?
-    %p= t('friend.blank')
-  - else
-    %ol
-      - @friends.each do |f|
-        %li= link_to f.name, member_path(f)
+  = render 'friends'

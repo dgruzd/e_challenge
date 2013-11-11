@@ -21,7 +21,16 @@
 
 en:
   hello: "Hello world"
+  friend:
+    blank: There is no friends
+    add: Add new friend
+  topic:
+    blank: There is no topics
   activerecord:
+    model:
+      topic:
+        one: Topic
+        other: Topics
     attributes:
       member:
         name: Member name

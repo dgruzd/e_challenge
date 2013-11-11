@@ -1,5 +1,8 @@
 EChallenge::Application.routes.draw do
-  resources :members
+  resources :members do
+    post 'add_friend/:id' => 'members#add_friend', as: :add_friend
+  end
+
 
   get '/:id' => "shortener/shortened_urls#show", as: :shortener
   # The priority is based upon order of creation: first created -> highest priority.

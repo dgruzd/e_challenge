@@ -1,0 +1,12 @@
+- if @friends.blank?
+  %h2= t('friend.blank')
+- else
+  %h2= t('word.friends')
+  %ol
+    - @friends.each do |f|
+      %li
+        = link_to f.name, member_path(f)
+- unless @not_friends.blank?
+  %h3= t('friend.add')
+  - @not_friends.each do |member|
+    %p= link_to member.name, member_add_friend_path(@member, member), remote: true, method: :post

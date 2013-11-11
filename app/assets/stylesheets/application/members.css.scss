@@ -2,6 +2,10 @@
   margin-bottom: 12px;
 }
 
+.member-short_url{
+  float: right;
+}
+
 .member_name{
 //  font-family: 'palatino linotype', palatino, serif;
   font-family: times, Times New Roman, times-roman, georgia, serif;
@@ -12,6 +16,10 @@
   line-height: 44px;
   letter-spacing: -2px;
   font-weight: bold;
+}
+
+.center{
+  text-align: center;
 }
 
 .friends_count{
