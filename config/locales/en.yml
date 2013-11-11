@@ -21,3 +21,11 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    attributes:
+      member:
+        name: Member name
+        website: Website url
+
+
+

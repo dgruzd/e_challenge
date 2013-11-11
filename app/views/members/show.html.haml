@@ -1,0 +1,17 @@
+%h1.member_name= @member.name
+%p= link_to @member.website, @member.website, target: '_blank'
+
+.topics
+  %h2= t('word.topics')
+  %ul
+    - @topics.each do |t|
+      %li= t.title
+
+.friends
+  %h2= t('word.friends')
+  - if @friends.blank?
+    %p= t('friend.blank')
+  - else
+    %ol
+      - @friends.each do |f|
+        %li= link_to f.name, member_path(f)

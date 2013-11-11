@@ -1,6 +1,5 @@
-.member_list {
-  width: 768px;
-  margin: 0 auto;
+.member{
+  margin-bottom: 12px;
 }
 
 .member_name{
@@ -13,4 +12,16 @@
   line-height: 44px;
   letter-spacing: -2px;
   font-weight: bold;
+}
+
+.friends_count{
+  color: rgb(233, 102, 107);
+}
+
+.new_member{
+  padding-bottom: 20px;
+  input{
+    width: 380px;
+
+  }
 }

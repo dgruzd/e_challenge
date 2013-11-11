@@ -1,5 +1,5 @@
 class Member < ActiveRecord::Base
-  has_many :topics, dependent: :delete_all
+  has_many :topics, order: 'level', dependent: :delete_all
   has_many :friendships
   #has_many :friends, through: :friendships
   has_shortened_urls
@@ -13,7 +13,8 @@ class Member < ActiveRecord::Base
 
   def friends
     Member.joins('INNER JOIN friendships ON members.id = friendships.friend_id OR members.id = friendships.member_id').
-        where('(friendships.member_id = :id OR friendships.friend_id = :id) AND members.id != :id',:id => self.id).where(nil)
+        where('(friendships.member_id = :id OR friendships.friend_id = :id) AND members.id != :id',:id => self.id).
+        by_friends.where(nil)
   end
 
   def add_friend(friend)
