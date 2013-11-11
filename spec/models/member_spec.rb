@@ -23,7 +23,6 @@ describe Member do
       @member.website = site
       @member.should be_valid
     end
-
   end
 
   it 'should not be valid with wrong url' do
@@ -31,6 +30,22 @@ describe Member do
       @member.website = site
       @member.should_not be_valid
       @member.website.should be == site
+    end
+  end
+
+  it 'should get topics' do
+    @alan = FactoryGirl.build(:alan)
+
+    VCR.use_cassette('alphasights') do
+      @alan.get_topics.count.should be == 9
+    end
+  end
+
+  it 'should create topics' do
+    @alan = FactoryGirl.create(:alan)
+
+    VCR.use_cassette('alphasights') do
+      expect{@alan.create_topics}.to change{@alan.topics.count}.by(9)
     end
   end
 end

@@ -17,6 +17,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'simplecov', require: false
   gem 'factory_girl_rails'
+  gem 'vcr', require: false
+  gem 'webmock', require: false
 
   gem 'guard-rspec'
   if RUBY_PLATFORM =~ /darwin/i

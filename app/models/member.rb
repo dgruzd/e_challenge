@@ -1,9 +1,26 @@
 class Member < ActiveRecord::Base
-  has_many :topics
+  has_many :topics, dependent: :delete_all
   validate :valid_url
   has_shortened_urls
   before_save :create_short_url
 
+
+  def create_topics
+    get_topics.each do |t|
+      self.topics.create!(level: t[:level], title: t[:title])
+    end
+  end
+
+  def get_topics
+    res = []
+    require 'open-uri'
+    n = Nokogiri::HTML(open(website))
+    n.css('h1,h2,h3').each do |node|
+      level = node.name[/\d/].to_i
+      res << {level: level, title: node.text.strip}
+    end
+    res
+  end
 
   private
   def valid_url
