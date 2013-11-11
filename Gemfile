@@ -16,6 +16,8 @@ gem 'kaminari'
 gem 'schema_plus'
 gem 'schema_validations'
 
+gem 'faker'
+
 gem 'shortener', git: 'git://github.com/nyaa/shortener.git', ref: '7ea75e'
 
 gem 'nokogiri'

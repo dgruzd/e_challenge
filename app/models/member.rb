@@ -8,11 +8,18 @@ class Member < ActiveRecord::Base
 
   after_create :create_short_url, :create_topics
 
-  scope :by_create, order('created_at DESC')
+  scope :by_create, -> { order('created_at DESC') }
+  scope :by_friends, -> { order('friends_count DESC') }
 
   def friends
     Member.joins('INNER JOIN friendships ON members.id = friendships.friend_id OR members.id = friendships.member_id').
         where('(friendships.member_id = :id OR friendships.friend_id = :id) AND members.id != :id',:id => self.id).where(nil)
+  end
+
+  def add_friend(friend)
+    ids = [self.id, friend.id].sort
+    fs = Friendship.new(member_id: ids.first, friend_id: ids.last)
+    fs.save
   end
 
   def short_url_key
