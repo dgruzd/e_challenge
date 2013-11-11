@@ -46,9 +46,9 @@ class Member < ActiveRecord::Base
     res
   end
 
-  def update_friends_count
-    self.update_attributes(friends_count: friends.count)
-  end
+  #def update_friends_count
+  #  self.update_attributes(friends_count: friends.count)
+  #end
 
   private
   def valid_url
