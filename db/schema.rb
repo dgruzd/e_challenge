@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20131111100741) do
   create_table "members", force: true do |t|
     t.string   "name",       null: false
     t.string   "website",    null: false
+    t.string   "short_url",  null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

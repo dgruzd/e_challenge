@@ -24,5 +24,7 @@ module EChallenge
       g.javascripts   false
       g.helper        false
     end
+
+    config.autoload_paths += %W(#{config.root}/lib)
   end
 end
