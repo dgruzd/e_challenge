@@ -9,6 +9,8 @@ gem 'haml-rails'
 gem 'schema_plus'
 gem 'schema_validations'
 
+gem 'shortener'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'simplecov', require: false
