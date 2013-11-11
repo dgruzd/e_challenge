@@ -8,6 +8,8 @@
 
 members = []
 members << {name: 'David Heinemeier Hansson', website: 'http://david.heinemeierhansson.com/'}
+members << {name: 'Jason Fried', website: 'https://twitter.com/jasonfried'}
+
 members << {name: 'Alan', website: 'http://www.alphasights.com/careers/positions/london/ruby-on-rails-developer'}
 members << {name: 'Oliver', website: 'https://github.com/oliver'}
 members << {name: 'Ernie Miller', website: 'http://erniemiller.org/'}

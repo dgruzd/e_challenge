@@ -1,5 +1,9 @@
 class Member < ActiveRecord::Base
   has_many :topics, dependent: :delete_all
+  has_many :friendships
+  has_many :friends, through: :friendships
+
+
   validate :valid_url
   has_shortened_urls
   after_save :create_short_url, :create_topics

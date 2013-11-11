@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131111113506) do
+ActiveRecord::Schema.define(version: 20131111135157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,18 @@ ActiveRecord::Schema.define(version: 20131111113506) do
     t.string   "website",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "friendships", force: true do |t|
+    t.integer  "member_id",  null: false
+    t.integer  "friend_id",  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["friend_id"], :name => "fk__friendships_friend_id"
+    t.index ["member_id"], :name => "fk__friendships_member_id"
+    t.index ["member_id", "friend_id"], :name => "index_friendships_on_member_id_and_friend_id", :unique => true
+    t.foreign_key ["friend_id"], "members", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_friendships_friend_id"
+    t.foreign_key ["member_id"], "members", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_friendships_member_id"
   end
 
   create_table "shortened_urls", force: true do |t|
