@@ -1,17 +1,20 @@
 class Member < ActiveRecord::Base
   has_many :topics, dependent: :delete_all
   has_many :friendships
-  has_many :friends, through: :friendships
-
+  #has_many :friends, through: :friendships
 
   validate :valid_url
   has_shortened_urls
   after_save :create_short_url, :create_topics
 
+  def friends
+    Member.joins('INNER JOIN friendships ON members.id = friendships.friend_id OR members.id = friendships.member_id').
+        where('(friendships.member_id = :id OR friendships.friend_id = :id) AND members.id != :id',:id => self.id).where(nil)
+  end
 
   def create_topics
     get_topics.each do |t|
-      self.topics.create!(level: t[:level], title: t[:title])
+      self.topics.create!(level: t[:level], title: t[:title]) unless t[:title].blank?
     end
   end
 
