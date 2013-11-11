@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/nyaa/shortener.git
+  revision: 7ea75e368d6b64c6d328609fd96659c943b37f87
+  ref: 7ea75e
+  specs:
+    shortener (0.2.0)
+      rails (>= 3.0.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -109,8 +117,6 @@ GEM
     sdoc (0.3.20)
       json (>= 1.1.3)
       rdoc (~> 3.10)
-    shortener (0.2.0)
-      rails (>= 3.0.7)
     simplecov (0.7.1)
       multi_json (~> 1.0)
       simplecov-html (~> 0.7.1)
@@ -159,7 +165,7 @@ DEPENDENCIES
   schema_plus
   schema_validations
   sdoc
-  shortener
+  shortener!
   simplecov
   thin
   turbolinks

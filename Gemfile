@@ -9,7 +9,7 @@ gem 'haml-rails'
 gem 'schema_plus'
 gem 'schema_validations'
 
-gem 'shortener'
+gem 'shortener', git: 'git://github.com/nyaa/shortener.git', ref: '7ea75e'
 
 group :development, :test do
   gem 'rspec-rails'
