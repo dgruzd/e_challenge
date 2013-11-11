@@ -1,6 +1,7 @@
 .member_list
   - @members.each do |member|
-    %p
+    %p.member
       = member.name
       - short_url = shortener_url(member.short_url_key)
-      = link_to short_url, short_url
+      = link_to short_url, short_url, target: '_blank'
+      = member.friends_count

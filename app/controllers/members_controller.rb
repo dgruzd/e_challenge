@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
   def index
-    @members = Member.includes(:shortened_urls).page(params[:page])
+    @members = Member.includes(:shortened_urls).by_create.page(params[:page])
   end
 
   def new

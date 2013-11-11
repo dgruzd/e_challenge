@@ -27,7 +27,13 @@ describe Friendship do
 
   it 'should be friends inverse' do
     expect{
-      FactoryGirl.create(:friendship, member_id: @ids.first, friend_id: @ids.last)
+      @friendship = FactoryGirl.create(:friendship, member_id: @ids.first, friend_id: @ids.last)
     }.to change{ @member2.friends.count }.from(0).to(1)
+  end
+
+  it 'should decrement friends_count' do
+    @friendship = Friendship.create!(member_id: @ids.first, friend_id: @ids.last)
+
+    expect{ @friendship.destroy }.to change{ @member.reload.friends_count}.by(-1)
   end
 end

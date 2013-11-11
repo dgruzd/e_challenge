@@ -6,7 +6,9 @@ class Member < ActiveRecord::Base
 
   validate :valid_url
 
-  after_save :create_short_url, :create_topics
+  after_create :create_short_url, :create_topics
+
+  scope :by_create, order('created_at DESC')
 
   def friends
     Member.joins('INNER JOIN friendships ON members.id = friendships.friend_id OR members.id = friendships.member_id').
@@ -36,6 +38,10 @@ class Member < ActiveRecord::Base
     res
   end
 
+  def update_friends_count
+    self.update_attributes(friends_count: friends.count)
+  end
+
   private
   def valid_url
     if self.website
@@ -46,6 +52,15 @@ class Member < ActiveRecord::Base
   def create_short_url
     Shortener::ShortenedUrl.generate(website, self)
   end
+
+
+  #def increment_counter
+  #  self.update_attributes(friends_count: friends_count+1)
+  #end
+  #
+  #def decrement_counter
+  #  self.update_attributes(friends_count: friends_count-1)
+  #end
 
   #def add_http
   #  if website
