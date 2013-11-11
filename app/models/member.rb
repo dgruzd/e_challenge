@@ -2,7 +2,7 @@ class Member < ActiveRecord::Base
   has_many :topics, dependent: :delete_all
   validate :valid_url
   has_shortened_urls
-  before_save :create_short_url
+  after_save :create_short_url, :create_topics
 
 
   def create_topics

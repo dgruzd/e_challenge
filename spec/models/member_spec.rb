@@ -42,10 +42,18 @@ describe Member do
   end
 
   it 'should create topics' do
-    @alan = FactoryGirl.create(:alan)
+    @alan = FactoryGirl.build(:alan)
 
     VCR.use_cassette('alphasights') do
-      expect{@alan.create_topics}.to change{@alan.topics.count}.by(9)
+      expect{@alan.save!}.to change{@alan.topics.count}.by(9)
+    end
+  end
+
+  it 'should create shortened url' do
+    @alan = FactoryGirl.build(:alan)
+
+    VCR.use_cassette('alphasights') do
+      expect{@alan.save!}.to change{@alan.shortened_urls.count}.by(1)
     end
   end
 end
