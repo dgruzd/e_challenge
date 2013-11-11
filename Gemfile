@@ -16,7 +16,13 @@ gem 'nokogiri'
 group :development, :test do
   gem 'rspec-rails'
   gem 'simplecov', require: false
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
+
+  gem 'guard-rspec'
+  if RUBY_PLATFORM =~ /darwin/i
+    gem 'rb-fsevent', :require => false
+    gem 'terminal-notifier-guard'
+  end
 end
 
 # Use sqlite3 as the database for Active Record
