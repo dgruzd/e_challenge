@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131111100059) do
+ActiveRecord::Schema.define(version: 20131111100741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20131111100059) do
     t.string   "website",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "topics", force: true do |t|
+    t.string   "title",                null: false
+    t.integer  "level",      limit: 2, null: false
+    t.integer  "member_id",            null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["member_id"], :name => "index_topics_on_member_id"
+    t.foreign_key ["member_id"], "members", ["id"], :on_update => :no_action, :on_delete => :no_action, :name => "fk_topics_member_id"
   end
 
 end

@@ -12,6 +12,7 @@ gem 'schema_validations'
 group :development, :test do
   gem 'rspec-rails'
   gem 'simplecov', require: false
+  gem 'factory_girl'
 end
 
 # Use sqlite3 as the database for Active Record
