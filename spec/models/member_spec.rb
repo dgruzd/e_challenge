@@ -64,4 +64,13 @@ describe Member do
       expect{@alan.save!}.to change{@alan.shortened_urls.count}.by(1)
     end
   end
+
+  it 'should return shortened key' do
+    VCR.use_cassette('alphasights') do
+      @alan = FactoryGirl.create(:alan)
+    end
+    @alan.short_url_key.should be
+
+    @member.short_url_key.should_not be
+  end
 end

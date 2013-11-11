@@ -1,0 +1,6 @@
+.member_list
+  - @members.each do |member|
+    %p
+      = member.name
+      - short_url = shortener_url(member.short_url_key)
+      = link_to short_url, short_url

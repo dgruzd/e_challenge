@@ -3,8 +3,15 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 gem 'pg'
-gem 'thin'
+
+group :development do
+  gem 'thin'
+  gem 'quiet_assets'
+end
+
 gem 'haml-rails'
+gem 'simple_form'
+gem 'kaminari'
 
 gem 'schema_plus'
 gem 'schema_validations'

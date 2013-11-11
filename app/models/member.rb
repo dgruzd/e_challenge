@@ -13,6 +13,10 @@ class Member < ActiveRecord::Base
         where('(friendships.member_id = :id OR friendships.friend_id = :id) AND members.id != :id',:id => self.id).where(nil)
   end
 
+  def short_url_key
+    shortened_urls.last.try(:unique_key)
+  end
+
   def create_topics
     get_topics.each do |t|
       self.topics.create!(level: t[:level], title: t[:title]) unless t[:title].blank?
