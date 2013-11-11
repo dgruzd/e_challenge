@@ -6,13 +6,16 @@ gem 'pg'
 gem 'thin'
 gem 'haml-rails'
 
+gem 'schema_plus'
+gem 'schema_validations'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'simplecov', require: false
 end
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
