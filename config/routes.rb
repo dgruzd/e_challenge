@@ -1,4 +1,5 @@
 EChallenge::Application.routes.draw do
+  get '/:id' => "shortener/shortened_urls#show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
