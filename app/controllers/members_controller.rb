@@ -49,8 +49,6 @@ class MembersController < ApplicationController
 
       bfs = BFS.new
       paths = bfs.bfs(@member.id, *member_ids)
-      logger.debug paths.inspect
-
 
       if paths
         @members = Member.find(paths.flatten.uniq)
@@ -61,7 +59,17 @@ class MembersController < ApplicationController
             @result << { path: members_path, topic: t, names: members_path.map(&:name)}
           end
         end
-        logger.debug @result.inspect
+
+        #Sort result by deep, heading level
+        @result.sort! do |x,y|
+          x_count = x[:path].count
+          y_count = y[:path].count
+          if x_count == y_count
+            y[:topic].level <=> x[:topic].level
+          else
+            x_count <=> y_count
+          end
+        end
       end
     end
 
