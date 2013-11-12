@@ -1,6 +1,6 @@
 EChallenge::Application.routes.draw do
   root :to => redirect('/members')
-  resources :members do
+  resources :members, except: [:edit, :destroy] do
     post 'add_friend/:id' => 'members#add_friend', as: :add_friend
     match 'find_experts' => 'members#find_experts', via: [:get, :post], as: :find_experts
   end
