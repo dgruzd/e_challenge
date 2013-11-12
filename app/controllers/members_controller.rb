@@ -1,4 +1,6 @@
 class MembersController < ApplicationController
+  include MembersHelper
+
   def index
     @member = Member.new
     @members = Member.includes(:shortened_urls).by_friends.page(params[:page])
@@ -59,17 +61,7 @@ class MembersController < ApplicationController
             @result << { path: members_path, topic: t, names: members_path.map(&:name)}
           end
         end
-
-        #Sort result by deep, heading level
-        @result.sort! do |x,y|
-          x_count = x[:path].count
-          y_count = y[:path].count
-          if x_count == y_count
-            y[:topic].level <=> x[:topic].level
-          else
-            x_count <=> y_count
-          end
-        end
+        @result = sort_experts(@result)
       end
     end
 
