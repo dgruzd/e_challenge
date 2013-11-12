@@ -21,11 +21,16 @@
 
 en:
   hello: "Hello world"
+  word:
+    submit: Submit
   friend:
     blank: There is no friends
     add: Add new friend
   topic:
     blank: There is no topics
+  expert:
+    find: Find experts by topic
+    not_found: No expert is found
   activerecord:
     model:
       topic:

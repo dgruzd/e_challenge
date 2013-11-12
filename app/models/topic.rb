@@ -4,4 +4,8 @@ class Topic < ActiveRecord::Base
   belongs_to :member
 
   scope :by_level, -> { order(:level) }
+
+  def self.search_by_title(title)
+    Topic.where('title ILIKE ?', "%#{title}%").where(nil)
+  end
 end

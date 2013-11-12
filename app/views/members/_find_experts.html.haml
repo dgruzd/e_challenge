@@ -1,0 +1,10 @@
+- if @result.blank?
+  = t('expert.not_found')
+- @result.each do |h|
+  %p
+    - links = h[:path].map do |member|
+      - link_to member.name, member_path(member)
+    != links.join(' -> ')
+
+    -# h[:names].join(' -> ')
+    = "('#{h[:topic].title}')"

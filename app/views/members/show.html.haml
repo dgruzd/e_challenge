@@ -14,3 +14,9 @@
 
 .friends
   = render 'friends'
+.find-expert
+  %h2= t('expert.find')
+  = form_tag member_find_experts_path(@member), remote: true do
+    = text_field_tag 'title'
+    = submit_tag t('word.submit')
+.list-experts

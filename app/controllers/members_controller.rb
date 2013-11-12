@@ -39,6 +39,36 @@ class MembersController < ApplicationController
     end
   end
 
+  def find_experts
+    @member = Member.find(params[:member_id])
+    @result = []
+
+    if params[:title].present?
+      @topics = Topic.search_by_title(params[:title])
+      member_ids = @topics.map(&:member_id).uniq
+
+      bfs = BFS.new
+      paths = bfs.bfs(@member.id, *member_ids)
+      logger.debug paths.inspect
+
+
+      if paths
+        @members = Member.find(paths.flatten.uniq)
+        @topics.each do |t|
+          path = paths.find{|f| f.last == t.member_id}
+          members_path = path.map{|id| @members.find{|f| f.id == id} }
+          @result << { path: members_path, topic: t, names: members_path.map(&:name)}
+        end
+        logger.debug @result.inspect
+      end
+    end
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   private
   def member_params
     params.require(:member).permit(:name, :website)
