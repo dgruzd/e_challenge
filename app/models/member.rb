@@ -42,7 +42,7 @@ class Member < ActiveRecord::Base
       res << {level: level, title: node.text.strip}
     end
     res
-  rescue OpenURI::HTTPError
+  rescue OpenURI::HTTPError, SocketError
     res
   end
 
@@ -53,7 +53,9 @@ class Member < ActiveRecord::Base
   private
   def valid_url
     if self.website
-      errors.add(self.website, 'Not valid url') unless UrlValidator.valid?(self.website)
+      unless UrlValidator.valid?(self.website)
+        errors.add(:website, 'Not valid url, please check website address')
+      end
     end
   end
 

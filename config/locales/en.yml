@@ -23,6 +23,7 @@ en:
   hello: "Hello world"
   word:
     submit: Submit
+    search: Search
   friend:
     blank: There is no friends
     add: Add new friend

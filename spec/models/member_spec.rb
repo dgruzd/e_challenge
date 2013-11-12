@@ -3,7 +3,9 @@ require 'spec_helper'
 describe Member do
 
   before(:each) do
-    @member = FactoryGirl.build(:member)
+    VCR.use_cassette('yandex') do
+      @member = FactoryGirl.build(:member, website: 'http://yandex.ru')
+    end
   end
 
   it 'should not be valid without name' do

@@ -7,6 +7,7 @@ class MembersController < ApplicationController
   end
 
   def new
+    @member = Member.new
   end
 
   def show
@@ -20,10 +21,11 @@ class MembersController < ApplicationController
 
   def create
     @member = Member.new(member_params)
+    logger.debug @member.errors.full_messages.inspect
     if @member.save
       redirect_to member_url(@member)
     else
-      render :index
+      render :new
     end
   end
 
