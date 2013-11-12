@@ -39,7 +39,8 @@ class BFS
       node = queue.shift
 
       if end_nodes.include? node
-        result << path(start_node, node)
+        found_path = path(start_node, node)
+        result << found_path if found_path.length > 2
       end
 
       array[node].each_with_index do |v,child|
