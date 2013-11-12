@@ -56,8 +56,10 @@ class MembersController < ApplicationController
         @members = Member.find(paths.flatten.uniq)
         @topics.each do |t|
           path = paths.find{|f| f.last == t.member_id}
-          members_path = path.map{|id| @members.find{|f| f.id == id} }
-          @result << { path: members_path, topic: t, names: members_path.map(&:name)}
+          if path
+            members_path = path.map{|id| @members.find{|f| f.id == id} }
+            @result << { path: members_path, topic: t, names: members_path.map(&:name)}
+          end
         end
         logger.debug @result.inspect
       end

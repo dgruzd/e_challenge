@@ -61,6 +61,7 @@ class BFS
       res << v
       v = p[v]
     end
+    return [] if res.count < 2
     res.reverse
   end
 end

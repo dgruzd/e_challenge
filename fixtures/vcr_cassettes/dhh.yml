@@ -1,0 +1,140 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://david.heinemeierhansson.com/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/0.7.65
+      Date:
+      - Tue, 12 Nov 2013 18:10:35 GMT
+      Content-Type:
+      - text/html
+      Last-Modified:
+      - Tue, 12 Nov 2013 18:10:10 GMT
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html>\n\n<html>\n<head>\n  <link rel=\"stylesheet\" type=\"text/css\"
+        href=\"stylesheets/screen.css\">\n  <title>David Heinemeier Hansson</title>\n
+        \ <meta name=\"viewport\" content=\"width=device-width\" />\n</head>\n\n<body>\n
+        \ <header>\n    <h1>DAVID HEINEMEIER HANSSON</h1>\n\n    <a href=\"http://www.flickr.com/photos/46457493@N00/3141998850/in/photostream\"><img
+        src=\"images/me.jpg\" width=\"150\" height=\"150\" class=\"avatar\" align=\"left\"></a>\n\n
+        \   <p class=\"header\">I am the <a href=\"#rails\">creator of Ruby on Rails</a>,
+        <a href=\"#37signals\">partner at 37signals</a>, <a href=\"#rework\">best-selling
+        author</a>, <a href=\"#speaker\">public speaker</a>, <a href=\"#driver\">race-car
+        driver</a>, <a href=\"#photographer\">hobbyist photographer</a>, and <a href=\"#family\">family
+        man</a>.</p>\n  </header>\n\n  <article>\n    <p>I tweet from <a href=\"http://twitter.com/dhh\">@dhh</a>
+        and email from <a href=\"mailto:david@heinemeierhansson.com\">david@heinemeierhansson.com</a>.</p>\n\n
+        \   <p>I write <a href=\"archive.html\">essays on this site</a> and <a href=\"http://37signals.com/svn/writers/dhh\">on
+        the 37signals blog</a>.</p>\n\n    <h2 id=\"rails\">Creator of Ruby on Rails</h2>\n
+        \   <p><a href=\"http://rubyonrails.org\">Ruby on Rails</a> is an open-source
+        web framework that's optimized for programmer happiness and beautiful code.
+        I created Rails in 2003 and continue to lead the development.</p>\n\n    <p>Hundreds
+        of thousands of programmers around the world have built amazing applications
+        using Rails. Some of the more famous include <a href=\"http://twitter.com\">Twitter</a>,
+        <a href=\"http://shopify.com\">Shopify</a>, <a href=\"http://500px.com\">500px</a>,
+        and <a href=\"http://github.com\">Github</a>.\n\n    <h2 id=\"37signals\">Partner
+        at 37signals</h2>\n    <p>We make software for the web at <a href=\"http://37signals.com/\">37signals</a>.
+        Our most popular product is <a href=\"http://basecamp.com\">Basecamp</a>,
+        a project management and collaboration application. We also make the simple
+        CRM <a href=\"http://highrisehq.com\">Highrise</a> and the group chat app
+        <a href=\"http://campfirenow.com\">Campfire</a>.</p>\n\n    <p>The company
+        has been around since 1999. I run it together with my business partner, Jason
+        Fried, and our lovely team of 36 programmers, designers, supporters, and sysops.</p>\n\n
+        \   <h2 id=\"rework\">Best-selling author</h2>\n    <p><a href=\"http://37signals.com/rework\">REWORK</a>
+        is a New York Times, Wall Street Journal, and Sunday Times best seller with
+        more than 300,000 copies sold around the world. It's a book about starting
+        and running businesses a better way. It's a short read, so you can finish
+        it in a couple of hours. It's <a href=\"http://www.amazon.com/Rework/dp/0307463745\">available
+        on Amazon</a>.</p>\n\n    <a href=\"http://37signals.com/rework\"><img src=\"images/rework/front-cover.png\"
+        width=\"257\" style=\"margin-right:20px\"></a><a href=\"http://37signals.com/rework\"><img
+        src=\"images/rework/back-cover.png\" width=\"257\"></a>\n\n    <p><a href=\"http://37signals.com/remote\">REMOTE:
+        Office Not Required</a> is the new book, and it encapsulates all I've learned
+        about working remotely for the best decade or more. It includes all the arguments
+        for why the time is right for remote work to blossom, and for how you can
+        navigate the pitfalls. It's in the same style as REWORK: Short, wonderfully
+        illustrated, and to the point.</p>\n    \n    <p style=\"text-align: center\"><a
+        href=\"http://37signals.com/remote\"><img src=\"images/remote-book2.png\"
+        width=\"293\" height=\"380\" border=\"0\"></a></p>\n\n    <p>I also co-wrote
+        <a href=\"http://gettingreal.37signals.com\">Getting Real</a>, the predecessor
+        to REWORK, and <a href=\"http://pragprog.com/book/rails3/agile-web-development-with-rails\">Agile
+        Web Development with Rails</a>.</p>\n    \n\n    <h2 id=\"speaker\">Public
+        speaker</h2>\n\n    <p>I occasionally give talks on business and technology.
+        My most popular talk is The Secret To Making Money Online, delivered at Startup
+        School in 2008. It's about how you don't need to aim to be a billionaire or
+        take lots of venture capital to have a successful startup (and life):</p>\n\n
+        \   <div class=\"video-wrap\">\n      <iframe width=\"540\" height=\"405\"
+        src=\"http://www.youtube.com/embed/0CDXJ6bMkMY\" frameborder=\"0\" allowfullscreen
+        style=\"margin-top: 5px; margin-bottom: 10px\"></iframe>\n    </div>\n\n    <p>Along
+        the same lines, I debated Jason Calcanis from This Week in Startups on business
+        models, bubbles, capitalism, quality of life, market share vs. profit share,
+        running a business vs. selling a business, and a variety of other related
+        topics (fast-forward 47 minutes):</p>\n\n    <div class=\"video-wrap\">\n
+        \     <iframe width=\"540\" height=\"304\" src=\"http://www.youtube.com/embed/fPrvnlvnu-k\"
+        frameborder=\"0\" allowfullscreen style=\"margin-top: 5px; margin-bottom:
+        10px\"></iframe>\n    </div>\n\n    <p>See also <a href=\"http://www.youtube.com/watch?v=jzERXJgi5vQ\">the
+        follow-up debate with Calcanis</a> from this year where we revisit some of
+        the same topics as well as new ones.</p>\n\n    <p>Finally, I told Stanford
+        Business School how to <a href=\"http://ecorner.stanford.edu/authorMaterialInfo.html?mid=2351\">Unlearn
+        Your MBA</a>.</p>\n\n    <h2 id=\"driver\">Race-car driver</h2>\n    <p>I'm
+        competing in the <a href=\"http://www.fiawec.com\">World Endurance Championship</a>
+        for 2013 in the LMP2 class with <a href=\"http://www.oak-racing.com/?lang=en\">OAK
+        Racing</a>. I'm racing together with Olivier Pla and Alex Brundle. We finished
+        2nd at Le Mans and have been on the podium four times this season.</p>\n    \n
+        \   <img src=\"images/racing/lemans2013.jpg\" width=\"540\" height=\"337\"
+        alt=\"Me driving at Le Mans 2013\">\n\n    <p>I started racing sportscars
+        in the <a href=\"http://www.youtube.com/watch?v=1K3dLCfrHfI\">Cayman Interseries</a>
+        in 2009, moved to 911 GT3 Cup Cars at the end of 2010 (<a href=\"https://www.youtube.com/watch?v=HwUt-CXsgho\">winning
+        the gold class in my first race!</a>), and then went all out in 2011 with
+        races in <a href=\"http://imsachallenge.com/season/standings/2011#Platinum%20Cup\">GT3
+        Challenge</a>, <a href=\"https://www.youtube.com/watch?v=eBXYomaVsBQ\">Radical
+        Masters</a>, ALMS GTC, Grand-Am ST, and ILMC (in Lotus below).</p>\n\n    <img
+        src=\"images/racing/jetalliance.jpg\" width=\"540\" height=\"201\" alt=\"Off-roading
+        the Lotus Evora GTE at Silverstone ILMC\">\n\n    <p>That was all warm up
+        for my break-out season in 2012. Together with <a href=\"http://www.alms.com/teams/conquest-endurance\">Conquest
+        Endurance</a>, I competed in the American Le Mans Series with LMP2 class-wins
+        at Mosport and Road America to finish second in the championship. That performance
+        earned me <a href=\"http://auto-racing.speedtv.com/article/alms-2012-rookies-of-the-year-david-heinemeier-hansson-alex-popow/\">SPEED's
+        Rookie of the Year</a>.</p>\n\n    <img src=\"images/racing/mosport-win.jpg\"
+        width=\"540\" height=\"237\" alt=\"Winning the Mosport GP\">\n\n    <p>I post
+        <a href=\"https://www.youtube.com/dhhracing\">race videos on YouTube</a> and
+        tweet racing from <a href=\"http://twitter.com/dhhracing\">@dhhracing</a>.</p>\n\n
+        \   <h2 id=\"photographer\">Hobbyist photographer</h2>\n\n    <p>\n      I
+        share pictures on <a href=\"http://www.flickr.com/photos/46457493@N00/\">Flickr</a>
+        and <a href=\"http://500px.com\">500px</a>. Here are a few of my favorites:\n
+        \   </p>\n\n    <p>\n      <a href=\"http://www.flickr.com/photos/46457493@N00/8248637769/\"
+        title=\"Rising impact by davidhh, on Flickr\"><img src=\"http://farm9.staticflickr.com/8065/8248637769_effccc391a_z.jpg\"
+        width=\"540\" height=\"360\" alt=\"Rising impact\"></a><br>\n\n      <a href=\"http://www.flickr.com/photos/46457493@N00/3919247717/\"
+        title=\"5:45am by davidhh, on Flickr\"><img src=\"http://farm3.staticflickr.com/2531/3919247717_1dd7040a18_z.jpg\"
+        width=\"540\" height=\"360\" alt=\"5:45am\" style=\"margin: 15px 0 15px 0\"></a><br>\n\n
+        \     <a href=\"http://www.flickr.com/photos/46457493@N00/4609620774/\" title=\"Wing
+        stop by davidhh, on Flickr\"><img src=\"http://farm2.staticflickr.com/1111/4609620774_364bb04e29_z.jpg\"
+        width=\"540\" height=\"350\" alt=\"Wing stop\"></a>\n    </p>\n\n    <h2 id=\"family\">Family
+        man</h2>\n\n    <p>I'm married to Jamie:</p>\n\n    <p><a href=\"http://www.flickr.com/photos/46457493@N00/5420507288/\"
+        title=\"Tongue in cheek by davidhh, on Flickr\"><img src=\"http://farm6.staticflickr.com/5015/5420507288_09975e2eb8_b.jpg\"
+        width=\"540\" height=\"809\" alt=\"Tongue in cheek\"></a></p>\n\n    <p>This
+        is our son Colt:</p>\n\n    <p><a href=\"http://www.flickr.com/photos/46457493@N00/8767070308/\"
+        title=\"What's up, doc? by davidhh, on Flickr\"><img src=\"http://farm9.staticflickr.com/8398/8767070308_0b2ce175ff_z.jpg\"
+        width=\"540\" height=\"360\" alt=\"What's up, doc?\"></a></p>\n\n    <p>We
+        split our time between Chicago, Malibu, and Marbella.</p>\n  </article>\n</body>\n</html>\n"
+    http_version: 
+  recorded_at: Tue, 12 Nov 2013 17:59:37 GMT
+recorded_with: VCR 2.7.0

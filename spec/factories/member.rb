@@ -9,4 +9,9 @@ FactoryGirl.define do
   factory :alan, parent: :member do
     website 'http://www.alphasights.com/careers/positions/london/ruby-on-rails-developer'
   end
+
+  factory :dhh, parent: :member do
+    name 'David Heinemeier Hansson'
+    website 'http://david.heinemeierhansson.com/'
+  end
 end

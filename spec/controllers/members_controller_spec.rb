@@ -7,6 +7,10 @@ describe MembersController do
       @member = FactoryGirl.create(:member, website: 'http://yandex.ru')
       @member2 = FactoryGirl.create(:member, website: 'http://yandex.ru')
     end
+    VCR.use_cassette('dhh') do
+      @dhh = FactoryGirl.create(:dhh)
+      @dhh.add_friend(@member)
+    end
   end
 
   describe "GET 'index'" do
@@ -58,6 +62,12 @@ describe MembersController do
     it 'return http 400' do
       post :add_friend, member_id: @member.id, id: @member.id, format: :js
       response.should_not be_success
+    end
+  end
+
+  describe "post 'find_experts'" do
+    it 'return http success' do
+      post :find_experts, title: 'man', member_id: @member.id
     end
   end
 
