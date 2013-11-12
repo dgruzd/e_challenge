@@ -9,6 +9,7 @@
 Friendship.delete_all
 Topic.delete_all
 Member.delete_all
+ActiveRecord::Base.connection().execute('alter sequence members_id_seq RESTART;')
 
 dhh = Member.create! name: 'David Heinemeier Hansson', website: 'http://david.heinemeierhansson.com/'
 jason = Member.create! name: 'Jason Fried', website: 'https://twitter.com/jasonfried'
