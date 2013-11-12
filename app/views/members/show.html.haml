@@ -10,7 +10,10 @@
     %h2= Topic.model_name.human(count: 3)
     %ul
       - @topics.each do |t|
-        %li= t.title
+        %li
+          = t.title
+          = "(#{t.level})"
+
 
 .friends
   = render 'friends'
